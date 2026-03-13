@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>
+        Brandon Tang's GitHub Page
+    </title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+       
+    </head>
+    <body>
+         <script>
+            var name, item, quantity;
+            now = new Date();
+            hour = now.getHours();
+
+            name = window.prompt("Please enter your name");
+            item = window.prompt("Please enter the item you want to order");
+            quantity = window.prompt("Please enter the amount of" + item + " you want to order");
+
+            if (hour < 12) {
+                document.write("<h1> Good morning. ")
+            } else if (hour < 18) {
+                document.write("<h1> Good afternoon. ")
+            } else {
+                document.write("<h1> Good evening. ")
+            }
+            document.writeln("Thank you "+ name + ", for ordering " + quantity + " " + item + " from our store!")
+            document.writeln("Your order will be delivered on " + now.getMonth() + "/" + (now.getDate() + 7) + "/" + now.getFullYear())
+	    </script>
+        <!-- jumbotron to replace the header text from previous lab -->
+        <div class = "jumbotron jumbotron-fluid">
+            <div class="container">
+                <center>
+                    <h1 class="display-4">Brandon Tang's Ordering Page prototype</h1>
+                    <p class="lead"></p>
+                </center>
+            </div>
+        </div>
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link active" href="lab3.html">Lab 3</a>
+                    <a class="nav-link disabled" aria-current="page" href="lab4.html">Lab 4</a>
+                </div>
+            </div>
+        </div>
+        </nav>
+        <!-- paragraph -->
+        
+        <hr>
+        <p>3/12 Author: Brandon Tang</p>
+        <hr>
+    </body>
+    <br>
+    <br> 
+</html> 
