@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>
+        Brandon Tang's GitHub Page
+    </title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+       
+    </head>
+    <body>
+        
+        <!-- jumbotron to replace the header text from previous lab -->
+        <div class = "jumbotron jumbotron-fluid">
+            <div class="container">
+                <center>
+                    <h1 class="display-4">Brandon Tang's Registration Page</h1>
+                    <p class="lead"></p>
+                </center>
+            </div>
+        </div>
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link active" href="lab3.html">Lab 3</a>
+                    <a class="nav-link active" href="lab4.html">Lab 4</a>
+                    <a class="nav-link disabled" aria-current="page" href="lab5.html">Lab 5</a>
+                </div>
+            </div>
+        </div>
+        </nav>
+        <!-- paragraph -->
+         <div id="output"></div>
+        <form>
+            <form id="registrationForm"> 
+                Email:
+                <input type="email" id="email" name="email"><br>
+                Username:
+                <input type="text" id="username" name="username"><br>
+                Password:
+                <input type="password" id="password" name="password"><br>
+                Date of Birth:
+                <input type="date" id="dob" name="dob"><br>
+
+            </form>
+            <button onclick="submitForm()">Submit</button>
+        </form>
+        <script>
+           function submitForm() {
+                var email = document.getElementById("email").value;
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                var dob = document.getElementById("dob").value;
+
+                if (email === "" || username === "" || password === "" || dob === "") {
+                    alert("Fill out all fields please.");
+                    return;
+                }
+                // Validation: password must contain ! or ?
+                if (!password.includes("!") && !password.includes("?")) {
+                    output.innerHTML = "<div class='alert alert-danger'>Password must contain ! or ?</div>";
+                    return;
+                }
+                let user = {
+                    email: email,
+                    username: username,
+                    password: "*".repeat(password.length),
+                    dob: dob
+                };
+                output.innerHTML = "<div class='alert alert-success'>Registration successful! Welcome, " + username + "!</div>" +
+                "<p>Email: " + user.email + "</p>" +
+                "<p>Username: " + user.username + "</p>" +
+                "<p>Password: " + user.password + "</p>" +
+                "<p>Date of Birth: " + user.dob + "</p>";
+
+            }
+	    </script>
+        <hr>
+        <p>3/19 Author: Brandon Tang</p>
+        <hr>
+    </body>
+    <br>
+    <br> 
+</html> 
