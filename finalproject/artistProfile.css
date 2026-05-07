@@ -1,0 +1,9 @@
+.album-card img { 
+    transition: transform 0.3s; 
+}
+.album-card:hover img { 
+    transform: scale(1.05); 
+}
+.hero-section { 
+    background: white; border-bottom: 1px solid #dee2e6; 
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="artistProfile.css"> <!-- separate css file for the artist profile page -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Artist Info | Brandon Tang's Final Project</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </head>
+    <body class="bg-light">
+        <div class="hero-section py-5 mb-5">
+            <div class="container">
+                <!-- <a href="index.html" class="btn btn-outline-secondary btn-sm mb-4">← Back to Charts</a> --> 
+                 <!-- //intended to add a back button, but i didnt wanna pass more parameters to the link -->
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center"><!-- centered image; filled out later in the script -->
+                        <img id="artist-img" src="" class="rounded-circle shadow-lg mb-3 fluid" style="width: 250px; height: 250px; object-fit: cover; border: 5px solid white;">
+                    </div>
+                    <div class="col-md-8 text-center text-md-start"> <!-- these are filled out later in the script -->
+                        <div id="chart-rank" class="badge bg-primary mb-2"></div>
+                        <h1 id="artist-name" class="display-3 fw-bold"></h1>
+                        <p id="play-count" class="text-muted"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5 justify-content-center text-center">
+            <div class="col-md-5 col-lg-4">
+                <label class="form-label small text-muted fw-bold">Filter by:</label> <!--filter button -->
+                    <select class="form-select" id="dropdown" onchange="dropdown()"> <!--dropdown menu -->
+                        <!-- <option value="recent">Release Date</option> -->
+                        <option value="mostPlayed">Most Played</option>
+                        <option value="leastPlayed">Least Played</option>
+                        <option value="alphabetical">Alphabetical</option>
+                    </select>
+            </div>
+        </div>
+        <div class="container pb-5">
+            <h3 class="fw-bold mb-4">Top Albums</h3>
+            <div id="albums" class="row g-4"> <!--albums container, generate each album card in the script -->
+                <div class="text-center py-5">
+                    <div class="spinner-border text-primary" role="status"></div>
+                    <p>Loading discography...</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center text-muted">Last.fm Artists Tracker | Brandon Tang's Final Project</p>
+
+        <script src="artistProfile.js"></script>
+    </body>
+    
+</html>
