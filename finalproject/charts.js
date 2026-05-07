@@ -124,7 +124,7 @@ async function getArtistPFP(artistName, token) {
     }); //takes the artist's name and spotify token to make a call to spotify's api in order to grab the image of that artist
     const data = await response.json(); //makes sure the response is in json
     //returns the image url of the artist or if there is no image, use an image of a cat from cataas
-    return data.artists.items[0]?.images[0]?.url || "https://cataas.com/cat";
+    return data.artists.items[0]?.images[0]?.url || "https://cataas.com/cat?type=square&random=" + index;
 }
 
 fetchArtistCharts(); //initial call to fetch from the api's and render the data

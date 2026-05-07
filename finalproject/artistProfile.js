@@ -79,7 +79,7 @@ function renderAlbums(list) { //use a separate function for rendering since we c
     albums.innerHTML = '';
     //creates a card for each album using animations.
     list.forEach((album, index) => {
-        const albumImg = album.image[3]['#text'] || 'https://cataas.com/cat';
+        const albumImg = album.image[3]['#text'] || 'https://cataas.com/cat?type=square&random=' + index; 
         albums.innerHTML += `
             <div class="col-6 col-md-4 col-lg-3 card-animate" style="animation-delay: ${index * 0.05}s">
                 <div class="card h-100 border-0 bg-transparent album-card">
