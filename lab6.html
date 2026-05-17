@@ -60,7 +60,7 @@
                     const sortedCatFacts = rawCatFacts.sort((a, b) => a.factId - b.factId);
                     console.log(sortedCatFacts);
                     const image = document.getElementById("catImage");
-                    image.src = data.catPhoto;
+                    image.src = data.catPhoto.replace('1200px', '500px');
                     image.alt = "Image of a cat!";
                     document.getElementById("catFacts").innerHTML = "<h1>Cat facts!</h1><ul>";
                     sortedCatFacts.forEach(catFact => {
