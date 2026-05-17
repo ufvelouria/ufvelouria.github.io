@@ -60,7 +60,9 @@
                     const sortedCatFacts = rawCatFacts.sort((a, b) => a.factId - b.factId);
                     console.log(sortedCatFacts);
                     const image = document.getElementById("catImage");
-                    image.src = data.catPhoto.replace('1200px', '500px');
+                    image.src = data.catPhoto.replace('1200px', '500px'); 
+                    //i used .replace to make the image the correct thumbnail size
+                    //it will not show the image otherwise.
                     image.alt = "Image of a cat!";
                     document.getElementById("catFacts").innerHTML = "<h1>Cat facts!</h1><ul>";
                     sortedCatFacts.forEach(catFact => {
